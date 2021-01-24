@@ -109,5 +109,3 @@ elect = KB([
     Askable('up_s3'),
     Askable('down_s2')
 ])
-
-# print(kb)
