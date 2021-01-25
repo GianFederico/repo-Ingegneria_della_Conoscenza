@@ -8,6 +8,7 @@
 # Attribution-NonCommercial-ShareAlike 4.0 International License.
 # See: http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 
+# A body is represented as a list of atoms. Atoms are represented as strings.
 class Clause(object):
     """A definite clause"""
 
@@ -45,6 +46,8 @@ def yes(ans):
 
 
 # from display import Displayable
+# A knowledge base is a list of clauses and askables. This creates a dictionary that maps each atoms into the set of
+# clauses with that atom in the head.
 
 class KB():  # Displayable
     """A knowledge base consists of a set of clauses.
@@ -73,39 +76,11 @@ class KB():  # Displayable
         """
         return '\n'.join([str(c) for c in self.statements])
 
+#example
+#triv_KB = KB([
+    #Clause('i_am', ['i_think']),
+    #Clause('i_think'),
+    #Clause('i_smell', ['i_exist'])
+#])
 
-triv_KB = KB([
-    Clause('i_am', ['i_think']),
-    Clause('i_think'),
-    Clause('i_smell', ['i_exist'])
-])
 
-elect = KB([
-    Clause('light_l1'),
-    Clause('light_l2'),
-    Clause('ok_l1'),
-    Clause('ok_l2'),
-    Clause('ok_cb1'),
-    Clause('ok_cb2'),
-    Clause('live_outside'),
-    Clause('live_l1', ['live_w0']),
-    Clause('live_w0', ['up_s2', 'live_w1']),
-    Clause('live_w0', ['down_s2', 'live_w2']),
-    Clause('live_w1', ['up_s1', 'live_w3']),
-    Clause('live_w2', ['down_s1', 'live_w3']),
-    Clause('live_l2', ['live_w4']),
-    Clause('live_w4', ['up_s3', 'live_w3']),
-    Clause('live_p_1', ['live_w3']),
-    Clause('live_w3', ['live_w5', 'ok_cb1']),
-    Clause('live_p_2', ['live_w6']),
-    Clause('live_w6', ['live_w5', 'ok_cb2']),
-    Clause('live_w5', ['live_outside']),
-    Clause('lit_l1', ['light_l1', 'live_l1', 'ok_l1']),
-    Clause('lit_l2', ['light_l2', 'live_l2', 'ok_l2']),
-    Askable('up_s1'),
-    Askable('down_s1'),
-    Askable('up_s2'),
-    Askable('down_s2'),
-    Askable('up_s3'),
-    Askable('down_s2')
-])
