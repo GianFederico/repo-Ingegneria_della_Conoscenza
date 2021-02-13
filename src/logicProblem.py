@@ -45,11 +45,10 @@ def yes(ans):
     return ans.lower() in ['yes', 'yes.', 'oui', 'oui.', 'y', 'y.']  # bilingual
 
 
-# from display import Displayable
-# A knowledge base is a list of clauses and askables. This creates a dictionary that maps each atoms into the set of
-# clauses with that atom in the head.
+"""A knowledge base is a list of clauses and askables. This creates a dictionary that maps each atoms into the set of
+clauses with that atom in the head."""
 
-class KB():  # Displayable
+class KB():
     """A knowledge base consists of a set of clauses.
     This also creates a dictionary to give fast access to the clauses with an atom in head."""
 
@@ -72,8 +71,7 @@ class KB():  # Displayable
             return set()
 
     def __str__(self):
-        """returns a string representation of this knowledge base.
-        """
+        """returns a string representation of this knowledge base."""
         return '\n'.join([str(c) for c in self.statements])
 
 #example
