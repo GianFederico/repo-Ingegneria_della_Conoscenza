@@ -1,4 +1,3 @@
 # repo-Ingegneria_della_Conoscenza
-Progetto d'esame del corso di ingegneria della conoscenza
-
-realizzato in Python tramite l'ide PyCharm, è necessario il modulo owlready2
+Knowledge engineering course exam project.
+made using Python through PyCharm ide, owlready2 module is necessary for correct workflow.
